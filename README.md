@@ -10,12 +10,17 @@ https://codeexperts.com.br/
 2. [Um Pouco de Contexto](#parte2)     
 3. [Configurando Ambientes](#parte3)     
 4. [Iniciando com PHP](#parte4)     
+5. [5. Operadores](#parte5)     
+6. [6. Estruturas de Controle: Condicional](#parte6)     
+7. [7. Arrays & Estruturas de Repetição](#parte7)     
 ---
 
 
 ## <a name="parte1">1 - Seja Bem Vindo</a>
 
-
+1 - Bem Vindo
+2 - Quem Sou Eu
+3 - Sobre a Plataforma
 
 [Voltar ao Índice](#indice)
 
@@ -48,3 +53,26 @@ https://codeexperts.com.br/
 
 ---
 
+## <a name="parte5">5. Operadores</a>
+
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte6">6. Estruturas de Controle: Condicional</a>
+
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte7">7. Arrays & Estruturas de Repetição</a>
+
+
+
+[Voltar ao Índice](#indice)
+
+---
