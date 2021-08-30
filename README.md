@@ -48,7 +48,27 @@ https://codeexperts.com.br/
 
 ## <a name="parte3">3 - Configurando Ambientes</a>
 
+9 - [Windows] Instalando PHP
 
+10 - [Windows] Instalando Composer
+
+11 - [Windows] Instalando Editor de Código
+
+12 - [Windows] Olá Mundo
+
+13 - [Linux] Instalando PHP & Composer
+
+14 - [Linux] Instalando Editor de Código
+
+15 - [Linux] Olá Mundo
+
+16 - [MacOS] Instalando PHP
+
+17 - [MacOS] Instalando Editor de Código
+
+18 - [MacOS] Olá Mundo
+
+19 - [MacOS] Instalando Composer
 
 [Voltar ao Índice](#indice)
 
