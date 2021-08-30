@@ -19,7 +19,9 @@ https://codeexperts.com.br/
 ## <a name="parte1">1 - Seja Bem Vindo</a>
 
 1 - Bem Vindo
+
 2 - Quem Sou Eu
+
 3 - Sobre a Plataforma
 
 [Voltar ao Índice](#indice)
@@ -29,7 +31,15 @@ https://codeexperts.com.br/
 
 ## <a name="parte2">2 - Um Pouco de Contexto</a>
 
+4 - Um Pouco de História
 
+5 - PHP: Características
+
+6 - O Que Preciso para Programar PHP
+
+7 - Ambientes Prontos PHP
+
+8 - Linguagem Server Side
 
 [Voltar ao Índice](#indice)
 
