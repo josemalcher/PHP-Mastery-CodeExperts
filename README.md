@@ -77,7 +77,114 @@ https://codeexperts.com.br/
 
 ## <a name="parte4">4 - Iniciando com PHP</a>
 
+20 - Introdução
 
+```php
+<?php
+    echo "Hello world"; 
+    
+?>
+
+```
+
+21 - Comentários
+
+```php
+<?php
+    # comentario de uma liha
+    
+    // outro modelo de comentário
+    
+    /*
+    comentário
+    de
+    Varias Linhas 
+    */
+    
+?>
+
+```
+
+22 - Valores Literais
+
+```php
+<?php
+// Trabalhar com valores literais é trabalhar com o valor como ele é
+echo "Ola Mundo";
+
+echo 10;
+
+echo 10.99;
+
+```
+
+23 - Tipos Básicos
+
+```php
+<?php
+
+// tipo inteiro
+echo 1000;
+
+// tipo sttring: caracteres
+echo "Olá mundo";
+
+// tipo booleano
+echo true;
+echo false;
+
+// tipo Poto Flutuante
+echo 19.99;
+
+
+```
+
+24 - Inteiros / Ponto Flutuante
+
+```php
+
+<?php
+// inteiros 1,2,3,4,5,6,7,8,9,0
+
+echo -2;
+echo 2;
+
+// sistema Octal - o 0(zero) representa o Octal
+echo 0777; // 511
+
+echo 0x1FF; // 511
+
+echo gettype(10.90); // double / float
+
+echo PHP_INT_MIN;
+echo PHP_INT_MAX;
+echo PHP_FLOAT_MIN;
+echo PHP_FLOAT_MAX;
+
+echo 13.3e+2; // 1330.00
+echo 13.3e-2; // 0.133
+
+```
+
+25 - Strings
+
+26 - Funções de Manipulação de Strings
+
+27 - Variáveis
+
+28 - Praticando Variáveis
+
+29 - Diferença Aspas Simples e Duplas
+
+30 - NOWDOC & HEREDOC
+
+31 - Case Sensitive
+
+32 - Constantes
+
+33 - Dinâmica e Fracamente Tipada
+
+34 - Conclusões Módulo
 
 [Voltar ao Índice](#indice)
 
