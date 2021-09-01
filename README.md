@@ -307,15 +307,127 @@ echo str_ireplace("A", "x", "batata");
 
 28 - Praticando Variáveis
 
+```php
+<?php
+
+//O operador de atribuição: =
+$nome = 'Malcher';
+
+//$nome = 'Celso';
+
+$anos = 30;
+
+echo $nome . ' têm ' . $anos . ' anos.';
+```
+
 29 - Diferença Aspas Simples e Duplas
+
+```php
+<?php
+
+//O operador de atribuição: =
+$nome = 'Malcher';
+$anos = 30;
+
+//usando aspas simples
+echo '$nome têm $anos anos';
+
+echo '<br>';
+
+//usando aspas duplas
+echo "{$nome}s têm $anos anos";
+```
+
 
 30 - NOWDOC & HEREDOC
 
+```php
+<?php
+$nome = 'João';
+$cargo = 'Desenvolvedor';
+
+/*
+HEREDOC: Permite uma escrita com mais
+liberdade e interpreta códigos dinâmicos
+no texto.
+*/
+
+echo <<<HEREDOC
+Olá sou $nome, atuo como $cargo. <br>
+HEREDOC;
+
+echo <<<'NOWDOC'
+Olá sou $nome, atuo como $cargo. <br>
+NOWDOC;
+```
+
 31 - Case Sensitive
+
+```php
+<?php 
+
+//O PHP diferencia escritas de variáveis
+//maiusculas e minusculas em seus nomes.
+
+$idade = 30;
+$Idade = 40;
+$IDADE = 50;
+
+echo $idade;
+
+echo '<br>';
+echo $Idade;
+
+echo '<br>';
+echo $IDADE;
+
+```
 
 32 - Constantes
 
+```php
+<?php
+//Definindo constante
+define('LINK_SITE', 'http://codeexperts.com.br');
+
+echo LINK_SITE;
+
+echo '<br>';
+echo '<br>';
+
+//Algumas constantes do PHP
+echo 'Constante PHP Versão:' . PHP_VERSION;
+echo '<br>';
+echo 'Meu sistema é ' . PHP_OS;
+
+echo '<br>';
+echo '<br>';
+echo 'Estamos na pasta: ' . __DIR__;
+
+echo '<br>';
+echo '<br>';
+echo 'Estamos na pasta: ' . __FILE__;
+
+```
+
 33 - Dinâmica e Fracamente Tipada
+
+```php
+
+<?php
+//php entende o tipo como string pelo valor passado
+$nome = 'José'; 
+echo gettype($nome);
+
+echo '<br>';
+
+$nome = (string) 10;
+
+echo gettype($nome);
+
+//echo $nome; //um valor string na variável nome
+
+```
 
 34 - Conclusões Módulo
 
