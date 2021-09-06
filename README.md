@@ -718,7 +718,42 @@ echo $num; //1
 
 ## <a name="parte6">6. Estruturas de Controle: Condicional</a>
 
+44 - Introdução
 
+45 - Algoritmos?
+
+46 - Iniciando com Estrutrura Condicional
+
+47 - Primeiras Estruturas Condicionais
+
+```php
+<?php
+//Sintaxe básica de condicionais...
+
+if(false) {
+    echo "A condição foi satisfeita...";
+} else {
+    echo "A condição não foi satisfeita...";
+}
+
+//Sintaxe alternativa...
+
+if (false):
+    echo "A condição foi satisfeita...";
+else:
+    echo "A condição não foi satisfeita...";
+endif;
+```
+
+48 - Senão Se
+
+49 - Switch
+
+50 - Operador Ternário
+
+51 - Mais da Escrita do If
+
+52 - Conclusões
 
 [Voltar ao Índice](#indice)
 
