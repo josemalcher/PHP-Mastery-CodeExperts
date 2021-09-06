@@ -851,7 +851,335 @@ if($idadeUsuario >= $idadeMinima && $idadeUsuario <= $idadeMaxima)
 
 ## <a name="parte7">7. Arrays & Estruturas de Repetição</a>
 
+53 - Introdução
 
+54 - Arrays?
+
+55 - Praticando Arrays
+
+```php
+<?php
+
+//Escrita padrão de arrays
+$listaFrutas = array('laranja', 'maçã', 'uva');
+
+//Escrita Reduzida: short-syntax ou sintaxe reduzida
+//Está disponivel desde php 5.4+
+//$listaFrutas = ['laranja', 'maçã', 'uva'];
+
+//Acessando Indicies do array
+echo $listaFrutas[0];
+echo '<br>';
+
+
+echo $listaFrutas[1];
+echo '<br>';
+
+echo $listaFrutas[2];
+echo '<br>';
+
+//Visualizando estrutura do array
+print_r($listaFrutas);
+echo '<hr>';
+
+//Visualizando estrutura do array com mais informações
+var_dump($listaFrutas);
+
+```
+
+56 - Arrays Associativos
+
+```php
+<?php
+
+$usuario = [
+    'nome' => 'Nanderson Castro',
+    'email' =>  'nandokstro@gmail.com',
+    'idade' => 30,
+    'altura' => 1.70,
+    'brasileiro' => true
+];
+
+
+echo $usuario['nome'] . ' com o e-mail ' . $usuario['email']
+. ' têm a idade de ' . $usuario['idade'];
+```
+
+57 - Array Multi-Dimensional
+
+```php
+<?php
+
+$usuarios = [
+
+    [
+        'nome' => 'Usuário 1',
+        'email' => 'emailUm@email.com',
+        'endereco' => [
+            'cep' => '65000-000'
+        ]
+    ],
+
+    [
+        'nome' => 'Usuário 2',
+        'email' => 'emailDois@email.com',
+        'endereco' => [
+            'cep' => '68000-000'
+        ]
+    ]
+];
+
+/**
+ * [
+ *    0 => array: array-associativo(
+ *                     'nome: string', 
+ *                     'email: string', 
+ *                     'endereco': array-associativo(cep)),
+ * 
+ *    1 => array: array-associativo(
+ *                     'nome: string', 
+ *                     'email: string', 
+ *                     'endereco': array-associativo(cep))
+ * ]
+ */
+
+// echo '<pre>';
+//var_dump($usuarios);
+
+echo '<br>';
+
+echo $usuarios[0]['nome'] .  ', Email : ' . $usuarios[0]['email'];
+echo '<br>';
+echo 'Endereço CEP: ' . $usuarios[0]['endereco']['cep'];
+echo '<hr>';
+
+echo '<br>';
+
+echo $usuarios[1]['nome'] .  ', Email : ' . $usuarios[1]['email'];
+echo '<br>';
+echo 'Endereço CEP: ' . $usuarios[1]['endereco']['cep'];
+```
+
+58 - Funções para Arrays
+
+```php
+<?php
+
+$listaFrutas = ['maçã', 'goiaba', 'uva'];
+
+//Contar o tamanho do array...
+echo count($listaFrutas);
+echo '<br>';
+echo sizeof($listaFrutas); // Alias ou apelido para count...
+
+//Verificar se o array tem um elemento... 
+
+//O in_array vai retornar true se o item 
+//buscado existe no array do segundo parâmetro
+echo '<br>';
+$frutaEstaNoArray = in_array('goiaba', $listaFrutas);
+
+echo $frutaEstaNoArray ? 'Sim está na cesta de frutas'
+                       : 'Não está na cesta de frutas!';
+
+//Posso adicionar items a um array existente...
+print'<hr>';
+
+$carrinho = [
+    'Item: Mouse'
+];
+
+print_r($carrinho);
+
+array_push($carrinho, 'Item: Teclado');
+
+print '<hr>';
+print_r($carrinho);
+
+//Somar itens de um array
+
+$precos = [19.99, 20.99, 2.99, 10, 0.50];
+print '<hr>';
+echo 'Resultado da soma é: ' . array_sum($precos);
+
+```
+
+59 - Operadores para Arrays
+
+```php
+<?php 
+
+//Array da esquerda é adicionado ao da direita
+// na soma, tal qual uma junção e se existirem
+//chaves identificas, as chaves do array a direita serão
+//ignoradas...
+$listaFrutasUm = ['maçã'];
+
+$listaFrutasDois = ['laranja', 'banana', 'uva'];
+
+//Somar dois arrays com o operador: +
+$listaFrutas = $listaFrutasUm + $listaFrutasDois;
+
+print_r($listaFrutas);
+
+//Comparando arrays
+
+$listaFrutasUm = ['laranja', 'banana', 'uva'];
+
+$listaFrutasDois = [2 => 'uva', 1 => 'banana', 0 => 'laranja'];
+
+//== Compara os indicies e os valores 
+var_dump($listaFrutasUm == $listaFrutasDois); //true
+
+/*
+=== Compara os indicies, valores e se os indicies 
+estão na mesma ordem
+*/
+var_dump($listaFrutasUm === $listaFrutasDois); //false
+```
+
+60 - Estruturas de Repetição
+
+61 - For
+
+```php
+<?php
+
+$listaFrutas = ['uva', 'banana', 'laranja', 'maçã', 'goiaba'];
+
+//Escrita padrão...
+for($i = 0; $i < count($listaFrutas); $i++) {
+    echo $listaFrutas[$i] . '<br>';
+}
+
+echo '<br>';
+
+//Escrita alternativa...
+for ($i = 0; $i < count($listaFrutas); $i++):
+    
+    echo $listaFrutas[$i] . '<br>';
+
+endfor;
+```
+
+62 - While
+
+```php
+<?php
+$listaFrutas = ['uva', 'banana', 'laranja', 'maçã', 'goiaba'];
+
+$i = 0;
+
+//Escrita padrão...
+while($i < count($listaFrutas)) {
+    echo $listaFrutas[$i] . '<br>';
+    $i++;
+}
+
+echo '<hr>';
+
+$i = 0;
+//Escrita alternativa...
+while ($i < count($listaFrutas)):
+    
+    echo $listaFrutas[$i] . '<br>';
+    $i++;
+
+endwhile;
+```
+
+63 - Do While
+
+```php
+<?php
+$listaFrutas = ['uva', 'banana', 'laranja', 'maçã', 'goiaba'];
+
+$i = 0;
+
+do{
+
+    echo $listaFrutas[$i] . '<br>';
+    $i++;
+
+} while($i < count($listaFrutas));
+```
+
+64 - Foreach
+
+```php
+<?php
+
+//$numeros = range(0, 10);
+
+//echo '<pre>';
+//var_dump($numeros);
+
+//foreach($numeros as $numero) {
+//  echo $numero . '<br>';
+//}
+$listaFrutas = ['uva', 'banana', 'laranja', 'maçã', 'goiaba'];
+
+foreach($listaFrutas as $i => $fruta) {
+    print $i . ' - ' . $fruta . '<br>';
+}
+
+```
+
+65 - Iterando em Arrays MultiDimensionais
+
+```php
+
+<?php
+
+$usuarios = [
+
+    [
+        'nome' => 'Usuário 1',
+        'email' => 'emailUm@email.com',
+        'endereco' => [
+            'cep' => '65000-000'
+        ]
+    ],
+
+    [
+        'nome' => 'Usuário 2',
+        'email' => 'emailDois@email.com',
+        'endereco' => [
+            'cep' => '68000-000'
+        ]
+    ]
+];
+
+//Lê estes usuários com for.
+$mensagem = '';
+
+for($i = 0; $i < count($usuarios); $i++) {
+    $mensagem .= $usuarios[$i]['nome'];
+    $mensagem .= ', têm o e-mail ' . $usuarios[$i]['email'];
+    $mensagem .= '. Possui o CEP.: ' . $usuarios[$i]['endereco']['cep'];
+    $mensagem .= '<hr>'; //0, 1
+}
+
+echo $mensagem;
+
+echo '<br>';
+
+$mensagem = '';
+
+foreach($usuarios as $usuario) {
+
+    $mensagem .= $usuario['nome'];
+    $mensagem .= ', têm o e-mail ' . $usuario['email'];
+    $mensagem .= '. Possui o CEP.: ' . $usuario['endereco']['cep'];
+    $mensagem .= '<hr>'; //0, 1
+
+}
+
+echo $mensagem;
+
+```
+
+66 - Conclusões
 
 [Voltar ao Índice](#indice)
 
