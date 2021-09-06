@@ -747,11 +747,101 @@ endif;
 
 48 - Senão Se
 
+```php
+<?php
+
+$countString = strlen('Carlos'); //6
+
+if($countString == 5) {
+    
+    echo "String possui 5 caracteres...";
+
+} else if($countString == 6) {
+    
+    echo "String possui 6 caracteres...";
+
+} else {
+
+    echo "A string não possui cinco caracteres...";
+
+}
+
+
+if ($countString == 5):
+    echo "String possui 5 caracteres...";
+elseif ($countString == 6):
+    echo "String possui 6 caracteres...";
+else:
+    echo "A string não possui cinco caracteres...";
+endif;
+```
+
 49 - Switch
+
+```php
+<?php
+
+$fruta = "manga";
+
+switch($fruta) {
+    //Colocar os testes a serem executados...
+    case "maçã":
+        echo "A fruta recebida é maçã!";
+    break;
+
+    case "laranja":
+        echo "A fruta recebida é laranja!";
+    break;
+
+    case "uva":
+        echo "A fruta recebida é uva!";
+    break;
+
+    default:
+        echo "A fruta não é servida aqui...";
+}
+```
 
 50 - Operador Ternário
 
+```php
+<?php
+
+$num = 20;
+
+echo $num == 10 ? "Sim, é igual a 10" 
+                : "Não é igual a 10";
+echo '<br>';
+
+$valorRecebido = $num == 20 ? "O valor recebido é 20"
+                            : "O valor não é 20";
+
+echo $valorRecebido;
+
+echo '<br>';
+
+$quantidade = 0;
+
+$quantidadeRecebida = $quantidade ?: -1;
+
+echo $quantidadeRecebida;
+```
+
 51 - Mais da Escrita do If
+
+```php
+<?php
+
+$idadeMinima = 21;
+$idadeMaxima = 30;
+
+$idadeUsuario = 31;
+
+
+if($idadeUsuario >= $idadeMinima && $idadeUsuario <= $idadeMaxima)  
+    echo "Você possui a idade esperada!"; 
+
+```
 
 52 - Conclusões
 
