@@ -1,1 +1,3 @@
-Lista de Dados
+<pre>
+<?php
+var_dump(PRODUTOS);
