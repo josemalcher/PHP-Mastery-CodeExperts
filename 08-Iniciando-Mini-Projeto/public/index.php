@@ -15,10 +15,16 @@
 $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : '/';
 
 if ($pagina == '/') {
-    echo 'Página inicial';
+    //echo 'Página inicial';
+    //include '../templates/lista.php';
+
+    //require - Mata a aplicação se houve erro ou não encontrar o arquivo
+    require '../templates/lista.php';
 }
 
 if ($pagina == '/produto') {
-    echo 'Detalhe do Produto';
+    //echo 'Detalhe do Produto';
+    // http://localhost:8088/?pagina=/produto
+    require '../templates/produto.php';
 }
 
