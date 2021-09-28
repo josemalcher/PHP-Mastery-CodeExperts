@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/../bootstrap.php';
 
 // Query String ou QUery Params ou Parâmetros de URL
 
@@ -19,12 +20,12 @@ if ($pagina == '/') {
     //include '../templates/lista.php';
 
     //require - Mata a aplicação se houve erro ou não encontrar o arquivo
-    require '../templates/lista.php';
+    require TEMPLATES.'/lista.php';
 }
 
 if ($pagina == '/produto') {
     //echo 'Detalhe do Produto';
     // http://localhost:8088/?pagina=/produto
-    require '../templates/produto.php';
+    require TEMPLATES.'/produto.php';
 }
 
