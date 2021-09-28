@@ -26,6 +26,8 @@ if ($pagina == '/') {
 if ($pagina == '/produto') {
     //echo 'Detalhe do Produto';
     // http://localhost:8088/?pagina=/produto
+
+    $codigoProduto = isset($_GET['codigo']) ? $_GET['codigo'] : '';
     require TEMPLATES.'/produto.php';
 }
 

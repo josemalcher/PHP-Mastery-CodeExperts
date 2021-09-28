@@ -3,7 +3,7 @@
 return [
     [
         'codigo' => '0001',
-        'nome' => 'Produto Teste',
+        'nome' => 'Produto Teste 1',
         'preco' => 'R$ 19,90'
     ],
     [

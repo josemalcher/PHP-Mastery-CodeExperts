@@ -9,7 +9,10 @@
 </head>
 <body>
     <?php foreach (PRODUTOS as $produto) : ?>
-        <?php echo $produto['nome'] ?> <?php echo $produto['preco'] ?> <br>
+        <a href="/?pagina=/produto&codigo=<?php  echo $produto['codigo'] ?>">
+            Ver Produto </a> -
+        <?php echo $produto['nome'] ?> -
+        <?php echo $produto['preco'] ?> <br>
     <?php endforeach; ?>
 </body>
 </html>
