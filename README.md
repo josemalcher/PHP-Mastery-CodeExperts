@@ -13,6 +13,7 @@ https://codeexperts.com.br/
 5. [5. Operadores](#parte5)     
 6. [6. Estruturas de Controle: Condicional](#parte6)     
 7. [7. Arrays & Estruturas de Repetição](#parte7)     
+8. [8. Iniciando Mini-Projeto](#parte8)     
 ---
 
 
@@ -1180,6 +1181,48 @@ echo $mensagem;
 ```
 
 66 - Conclusões
+
+[Voltar ao Índice](#indice)
+
+---
+
+
+## <a name="parte8">8. Iniciando Mini-Projeto</a>
+
+67 - Introdução
+
+68 - Entendendo o Módulo
+
+69 - O que são Paradigmas
+
+70 - Iniciando Estrutura
+
+71 - Iniciando Navegação
+
+72 - Recebendo Valores da URL
+
+73 - Verificando Parâmetros da URL
+
+74 - Inclusão de Arquivos Externos
+
+75 - Usando Arquivo de Configuração
+
+76 - Criando Fonte de Produtos
+
+77 - PHP & HTML Juntos
+
+78 - Linkando Detalhes Produto
+
+79 - Criando Detalhe do Produto
+
+80 - Config Link Site & Extensão PHTML
+
+81 - Organizando Código HTML Repetido
+
+82 - Melhorando Busca do Produto
+
+83 - Conclusões
+
 
 [Voltar ao Índice](#indice)
 
