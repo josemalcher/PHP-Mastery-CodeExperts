@@ -1197,6 +1197,8 @@ echo $mensagem;
 
 70 - Iniciando Estrutura
 
+- [08-Iniciando-Mini-Projeto](08-Iniciando-Mini-Projeto)
+
 71 - Iniciando Navegação
 
 72 - Recebendo Valores da URL
