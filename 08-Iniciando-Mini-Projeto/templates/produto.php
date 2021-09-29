@@ -8,6 +8,8 @@
     <title>Produto id: <?php echo $codigoProduto?></title>
 </head>
 <body>
-    Produto - <?php echo $codigoProduto?>
+    Produto - <?php echo $produtoDetalhe['nome']?>
+    <hr>
+    Valor - <?php echo $produtoDetalhe['preco']?>
 </body>
 </html>

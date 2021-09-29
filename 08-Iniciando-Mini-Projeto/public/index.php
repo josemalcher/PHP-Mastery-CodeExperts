@@ -28,6 +28,20 @@ if ($pagina == '/produto') {
     // http://localhost:8088/?pagina=/produto
 
     $codigoProduto = isset($_GET['codigo']) ? $_GET['codigo'] : '';
+
+    if ($codigoProduto) {
+        $produtoDetalhe = '';
+        foreach (PRODUTOS as $produto) {
+            if ($produto['codigo'] == $codigoProduto) {
+                $produtoDetalhe = $produto;
+                break;
+            }
+        }
+    }
+    if (!$codigoProduto || !isset($produtoDetalhe) || !$produtoDetalhe) {
+        die('Produto não existe');
+    }
+
     require TEMPLATES.'/produto.php';
 }
 
