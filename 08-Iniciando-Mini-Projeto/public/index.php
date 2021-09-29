@@ -20,7 +20,7 @@ if ($pagina == '/') {
     //include '../templates/lista.php';
 
     //require - Mata a aplicação se houve erro ou não encontrar o arquivo
-    require TEMPLATES.'/lista.php';
+    require TEMPLATES.'/lista.phtml';
 }
 
 if ($pagina == '/produto') {
@@ -42,6 +42,6 @@ if ($pagina == '/produto') {
         die('Produto não existe');
     }
 
-    require TEMPLATES.'/produto.php';
+    require TEMPLATES.'/produto.phtml';
 }
 

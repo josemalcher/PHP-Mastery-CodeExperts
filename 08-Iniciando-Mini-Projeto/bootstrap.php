@@ -1,7 +1,8 @@
 <?php
 
-// configurações Proejto
-
+// configurações Projeto
+define('HOME', 'http://localhost:8088/');
+define('PROJETO', 'Codigo Estoque');
 define('TEMPLATES', __DIR__ . '/templates');
 
 // Array com os produtos tal qual um banco de dados
