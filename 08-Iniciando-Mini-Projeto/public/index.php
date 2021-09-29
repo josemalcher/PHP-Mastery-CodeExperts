@@ -33,12 +33,18 @@ if ($pagina == '/produto') {
 
     if ($codigoProduto) {
         $produtoDetalhe = '';
-        foreach (PRODUTOS as $produto) {
+
+        /*foreach (PRODUTOS as $produto) {
             if ($produto['codigo'] == $codigoProduto) {
                 $produtoDetalhe = $produto;
                 break;
             }
-        }
+        }*/
+        // Melhoria:
+        $produtoDetalhe = array_filter(PRODUTOS, function ($produto) use($codigoProduto){
+            return $produto['codigo'] == $codigoProduto;
+        });
+        $produtoDetalhe = current($produtoDetalhe);
     }
     if (!$codigoProduto || !isset($produtoDetalhe) || !$produtoDetalhe) {
         die('Produto não existe');
