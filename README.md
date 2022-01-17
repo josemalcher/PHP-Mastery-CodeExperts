@@ -1234,23 +1234,23 @@ echo $mensagem;
 ---
 ## <a name="parte9">9. PHP & Formulários</a>
 
-84 - Introdução0:00:42
+84 - Introdução
 
-85 - Iniciando Formulário0:14:04
+85 - Iniciando Formulário
 
-86 - Incrementando Formulário0:06:57
+86 - Incrementando Formulário
 
-87 - Submentendo Formulário0:10:10
+87 - Submentendo Formulário
 
-88 - Input Number e Select0:07:14
+88 - Input Number e Select
 
-89 - Entendendo Dados Enviados Via POST0:06:19
+89 - Entendendo Dados Enviados Via POST
 
-90 - Enviando Arquivos0:07:01
+90 - Enviando Arquivos
 
-91 - Enviando Múltiplos Arquivos0:06:41
+91 - Enviando Múltiplos Arquivos
 
-92 - Mais Sobre Inputs0:14:07
+92 - Mais Sobre Inputs
 
 93 - Conclusões
 
@@ -1259,29 +1259,29 @@ echo $mensagem;
 ---
 ## <a name="parte10">10. Começando com Banco de Dados</a>
 
-94 - Introdução0:01:54
+94 - Introdução
 
-95 - BDs e SGBDs0:04:29
+95 - BDs e SGBDs
 
-96 - O MySQL0:04:43
+96 - O MySQL
 
-97 - Banco Relacional0:05:51
+97 - Banco Relacional
 
-98 - Grupos de Comandos SQL0:06:07
+98 - Grupos de Comandos SQL
 
-99 - MyISAM e InnoDB0:06:15
+99 - MyISAM e InnoDB
 
-100 - Ambiente MySQL no Windows0:09:49
+100 - Ambiente MySQL no Windows
 
-101 - Mysql no Linux0:11:11
+101 - Mysql no Linux
 
-102 - PHPMyAdmin Linux0:11:51
+102 - PHPMyAdmin Linux
 
-103 - Mysql no OS X0:12:30
+103 - Mysql no OS X
 
-104 - PHPMyAdmin OS X0:13:19
+104 - PHPMyAdmin OS X
 
-105 - Criando Primeiro Banco0:12:46
+105 - Criando Primeiro Banco
 
 106 - Conclusões
 
