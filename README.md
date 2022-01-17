@@ -14,6 +14,9 @@ https://codeexperts.com.br/
 6. [6. Estruturas de Controle: Condicional](#parte6)     
 7. [7. Arrays & Estruturas de Repetição](#parte7)     
 8. [8. Iniciando Mini-Projeto](#parte8)     
+8. [9. PHP & Formulários](#parte9)     
+8. [10. Começando com Banco de Dados](#parte10)     
+8. [11. PHP & Banco de Dados](#parte11)     
 ---
 
 
@@ -1225,6 +1228,94 @@ echo $mensagem;
 
 83 - Conclusões
 
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte9">9. PHP & Formulários</a>
+
+84 - Introdução0:00:42
+
+85 - Iniciando Formulário0:14:04
+
+86 - Incrementando Formulário0:06:57
+
+87 - Submentendo Formulário0:10:10
+
+88 - Input Number e Select0:07:14
+
+89 - Entendendo Dados Enviados Via POST0:06:19
+
+90 - Enviando Arquivos0:07:01
+
+91 - Enviando Múltiplos Arquivos0:06:41
+
+92 - Mais Sobre Inputs0:14:07
+
+93 - Conclusões
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte10">10. Começando com Banco de Dados</a>
+
+94 - Introdução0:01:54
+
+95 - BDs e SGBDs0:04:29
+
+96 - O MySQL0:04:43
+
+97 - Banco Relacional0:05:51
+
+98 - Grupos de Comandos SQL0:06:07
+
+99 - MyISAM e InnoDB0:06:15
+
+100 - Ambiente MySQL no Windows0:09:49
+
+101 - Mysql no Linux0:11:11
+
+102 - PHPMyAdmin Linux0:11:51
+
+103 - Mysql no OS X0:12:30
+
+104 - PHPMyAdmin OS X0:13:19
+
+105 - Criando Primeiro Banco0:12:46
+
+106 - Conclusões
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte11">11. PHP & Banco de Dados</a>
+
+107 - Introdução
+
+108 - Criando Primeira Tabela
+
+109 - SQL Inserindo e Atualizando Dados
+
+110 - SQL Removendo Dados
+
+111 - SQL Busca de Dados
+
+112 - Conectando PHP e MySQL
+
+113 - PDO Inserção
+
+114 - PDO Atualização
+
+115 - PDO Prepared Statements
+
+116 - PDO Removendo Dados
+
+117 - PDO Buscando Dados
+
+118 - Form e Banco de Dados
+
+119 - Conclusões
 
 [Voltar ao Índice](#indice)
 
