@@ -22,7 +22,7 @@ if ($pagina == '/') {
     //require - Mata a aplicação se houve erro ou não encontrar o arquivo
 
     $titulo = 'Listagem de Produto';
-    require TEMPLATES.'/lista.phtml';
+    require TEMPLATES . '/lista.phtml';
 }
 
 if ($pagina == '/produto') {
@@ -32,7 +32,7 @@ if ($pagina == '/produto') {
     $codigoProduto = isset($_GET['codigo']) ? $_GET['codigo'] : '';
 
     if ($codigoProduto) {
-        $produtoDetalhe = '';
+        // $produtoDetalhe = '';
 
         /*foreach (PRODUTOS as $produto) {
             if ($produto['codigo'] == $codigoProduto) {
@@ -41,7 +41,7 @@ if ($pagina == '/produto') {
             }
         }*/
         // Melhoria:
-        $produtoDetalhe = array_filter(PRODUTOS, function ($produto) use($codigoProduto){
+        $produtoDetalhe = array_filter(PRODUTOS, function ($produto) use ($codigoProduto) {
             return $produto['codigo'] == $codigoProduto;
         });
         $produtoDetalhe = current($produtoDetalhe);
@@ -50,6 +50,8 @@ if ($pagina == '/produto') {
         die('Produto não existe');
     }
     $titulo = 'Detalhes do Produto';
-    require TEMPLATES.'/produto.phtml';
+    require TEMPLATES . '/produto.phtml';
 }
-
+if ($pagina == '/produto/criar') {
+    require TEMPLATES . '/criar-produto.phtml';
+}

@@ -1,7 +1,7 @@
 <?php
 
 // configurações Projeto
-define('HOME', 'http://localhost:8088');
+define('HOME', 'http://localhost:8081');
 define('PROJETO', 'Codigo Estoque');
 define('TEMPLATES', __DIR__ . '/templates');
 
