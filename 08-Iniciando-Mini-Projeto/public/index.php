@@ -56,5 +56,6 @@ if ($pagina == '/produto/criar') {
     require TEMPLATES . '/criar-produto.phtml';
 }
 if ($pagina == '/produto/salvar') {
+    print '<pre>';
     var_dump($_POST); // array(4) { ["nome"]=> string(0) "" ["descricao"]=> string(0) "" ["sobre"]=> string(8) " " ["valor"]=> string(0) "" }
 }
