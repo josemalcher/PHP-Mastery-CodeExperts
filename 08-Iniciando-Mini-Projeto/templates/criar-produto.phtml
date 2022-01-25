@@ -1,6 +1,6 @@
 <?php require TEMPLATES . '/includes/cabecalho.phtml' ?>
 <h1>Criar Produtos</h1>
-<form action="<?php echo HOME;?>?pagina=/produto/salvar" method="post">
+<form action="<?php echo HOME;?>?pagina=/produto/salvar" method="post" enctype="multipart/form-data">
     <div>
         <label>Nome Completo</label>
         <input type="text" name="nome" id="name" placeholder="Seu Nome Completo">
@@ -29,6 +29,12 @@
             <option value="1">Ativo</option>
             <option value="2">Inativo</option>
         </select>
+    </div>
+
+    <div>
+        <label>Fotos Produtos</label>
+        <input type="file" name="foto">
+
     </div>
 
     <button>Enviar Produto</button>
