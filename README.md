@@ -1269,6 +1269,8 @@ echo $mensagem;
 
 98 - Grupos de Comandos SQL
 
+![98 - Grupos de Comandos SQL](images/SQL_1.png)
+
 99 - MyISAM e InnoDB
 
 100 - Ambiente MySQL no Windows
