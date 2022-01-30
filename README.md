@@ -1314,6 +1314,18 @@ CREATE TABLE produtos (
 
 109 - SQL Inserindo e Atualizando Dados
 
+```sql
+INSERT INTO `controle_estoque`.`produtos` (`nome`, `descricao`, `sobre`, `preco`, `status`, `criacao_em`, `atualizacao_em`) 
+VALUES ('produto teste 1', 'descricao do produto 1', 'sobre o produto 1', '29.9', '1', '2022-01-30 18:23:21', '2022-01-30 18:23:22');
+```
+
+```sql
+UPDATE `controle_estoque`.`produtos` 
+    SET `descricao`='descricao do produto 1 com update', `status`='0' 
+WHERE  `id`=1;
+```
+
+
 110 - SQL Removendo Dados
 
 111 - SQL Busca de Dados
