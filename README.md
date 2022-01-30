@@ -1297,6 +1297,21 @@ echo $mensagem;
 
 108 - Criando Primeira Tabela
 
+```sql
+
+USE controle_estoque;
+CREATE TABLE produtos (
+	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(255) NOT NULL,
+	descricao VARCHAR(255) NULL,
+	sobre LONGTEXT,
+	preco FLOAT(10,2),
+	criacao_em DATETIME,
+	atualizacao_em DATETIME
+)ENGINE=innoDBprodutos
+
+```
+
 109 - SQL Inserindo e Atualizando Dados
 
 110 - SQL Removendo Dados
