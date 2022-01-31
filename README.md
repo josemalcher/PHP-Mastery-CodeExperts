@@ -1328,7 +1328,55 @@ WHERE  `id`=1;
 
 110 - SQL Removendo Dados
 
+```sql
+DELETE FROM `controle_estoque`.`produtos` WHERE  `id`=3;
+```
+
 111 - SQL Busca de Dados
+
+```sql
+SELECT * FROM `controle_estoque`.produtos WHERE id = 5;
+```
+
+- https://gist.github.com/NandoKstroNet/9ea095f90414384872e857afbf671fd1
+
+```sql
+-- SQL para criação de tabela produtos
+
+CREATE TABLE produtos (
+    id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    descricao VARCHAR(255) NULL,
+    sobre LONGTEXT,
+    preco FLOAT(10, 2),
+    status TINYINT(1),
+    criado_em DATETIME,
+    atualizado_em DATETIME
+)engine=innoDB;
+
+-- SQL para inserção em tabela produtos
+INSERT INTO produtos (nome, descricao, sobre, preco, status, criado_em, atualizado_em) VALUES ('Produto Teste ', 'Descrição Teste', 'Sobre o produto teste...', 29.9, 1, NOW(), NOW());
+
+-- SQL para atualização em tabela produtos
+UPDATE produtos SET nome = 'Produto Atualizado', status = 0 WHERE id = 1;
+
+-- SQL para busca em tabela produtos
+SELECT * FROM produtos;
+
+SELECT nome, preco FROM produtos;
+
+SELECT * FROM produtos WHERE id = 1;
+
+SELECT * FROM produtos WHERE preco > 10;
+
+SELECT * FROM produtos WHERE status = 1;
+
+SELECT * FROM produtos WHERE DATE(criado_em) BETWEEN '2022-01-01' AND DATE(NOW());
+
+-- SQL para remoção em tabela produtos
+
+DELETE FROM produtos WHERE id = 1;
+```
 
 112 - Conectando PHP e MySQL
 
