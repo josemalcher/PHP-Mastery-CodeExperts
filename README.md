@@ -1409,6 +1409,15 @@ var_dump($conexao->query($sql));
 
 114 - PDO Atualização
 
+```php
+$sql = "UPDATE produtos 
+            SET nome = 'PHP ATUALIZADO!'
+        WHERE id = 1";
+
+var_dump($conexao->query($sql));
+// object(PDOStatement)#2 (1) { ["queryString"]=> string(80) "UPDATE produtos SET nome = 'PHP ATUALIZADO!' WHERE id = 1" }
+```
+
 115 - PDO Prepared Statements
 
 116 - PDO Removendo Dados
