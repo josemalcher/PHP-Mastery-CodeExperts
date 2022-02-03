@@ -4,4 +4,21 @@
 
 $conexao = new PDO("mysql:dbname=controle_estoque;host=localhost", "root", "");
 
-var_dump($conexao);
+$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+// Inserção
+$sql = "INSERT INTO produtos
+        (nome, descricao, sobre, preco, status, criacao_em, atualizacao_em)
+        VALUES
+               ('Produto PHP', 'descrição PHP', 'sobre php', 255.99, 1, NOW(), NOW())
+        ";
+
+var_dump($conexao->query($sql));
+// object(PDOStatement)#2 (1)
+// { ["queryString"]=> string(212) "INSERT INTO produtos (nome, descricao, sobre, preco, status, criacao_em, atualizacao_em)
+// VALUES ('Produto PHP', 'descrição PHP', 'sobre php', 255.99, 1, NOW(), NOW()) " }
+
+// Atualização
+
+
+// var_dump($conexao);
