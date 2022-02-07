@@ -1420,6 +1420,34 @@ var_dump($conexao->query($sql));
 
 115 - PDO Prepared Statements
 
+```php
+
+$sql = "INSERT INTO produtos
+        (nome, descricao, sobre, preco, status, criacao_em, atualizacao_em)
+        VALUES
+               (:nome, :descricao, :sobre, :preco, :status, NOW(), NOW())
+        ";
+
+$post = [
+    'nome' => 'Produto Statement',
+    'descricao' => 'Descrição teste',
+    'sobre' => 'Testando statement',
+    'preco' => 22.99,
+    'status' => 1
+];
+
+$insert = $conexao->prepare($sql);
+
+$insert->bindValue(':nome', $post['nome'], PDO::PARAM_STR);
+$insert->bindValue(':descricao', $post['descricao'], PDO::PARAM_STR);
+$insert->bindValue(':sobre', $post['sobre'], PDO::PARAM_STR);
+$insert->bindValue(':preco', $post['preco'], PDO::PARAM_STR);
+$insert->bindValue(':status', $post['status'], PDO::PARAM_INT);
+
+var_dump($insert->execute());
+
+```
+
 116 - PDO Removendo Dados
 
 117 - PDO Buscando Dados
