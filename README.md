@@ -1450,6 +1450,17 @@ var_dump($insert->execute());
 
 116 - PDO Removendo Dados
 
+```php
+$id = 3;
+$sql = "DELETE FROM produtos WHERE id = :id";
+$delete = $conexao->prepare($sql);
+
+$delete->bindValue(':id', $id, PDO::PARAM_INT);
+
+var_dump($delete->execute());
+
+```
+
 117 - PDO Buscando Dados
 
 118 - Form e Banco de Dados
