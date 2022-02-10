@@ -1,7 +1,7 @@
 <?php
 
 require __DIR__ . '/src/funcoes/conexao.php';
-die;
+//die;
 
 // configurações Projeto
 define('HOME', 'http://localhost:8081');

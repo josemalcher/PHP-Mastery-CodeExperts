@@ -69,7 +69,7 @@ $delete->bindValue(':id', $id, PDO::PARAM_INT);
 
 var_dump($delete->execute());
 */
-
+/*
 $id = $_GET['id'];
 
 $sql = "SELECT * FROM produtos WHERE id = :id";
@@ -82,6 +82,6 @@ $select->execute();
 echo '<pre>';
 var_dump($select->fetchAll(PDO::FETCH_ASSOC)); // varios itens
 var_dump($select->fetchA(PDO::FETCH_ASSOC));// apenas 1 item
-
+*/
 
 
