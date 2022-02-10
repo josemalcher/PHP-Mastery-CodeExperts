@@ -60,7 +60,7 @@ var_dump($conexao->query($sql));
 //$insert->bindValue(':status', $post['status'], PDO::PARAM_INT);
 //
 //var_dump($insert->execute());
-
+/*
 $id = 3;
 $sql = "DELETE FROM produtos WHERE id = :id";
 $delete = $conexao->prepare($sql);
@@ -68,3 +68,20 @@ $delete = $conexao->prepare($sql);
 $delete->bindValue(':id', $id, PDO::PARAM_INT);
 
 var_dump($delete->execute());
+*/
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM produtos WHERE id = :id";
+$select = $conexao->prepare($sql);
+
+$select->bindValue(':id', $id, PDO::PARAM_INT);
+
+$select->execute();
+
+echo '<pre>';
+var_dump($select->fetchAll(PDO::FETCH_ASSOC)); // varios itens
+var_dump($select->fetchA(PDO::FETCH_ASSOC));// apenas 1 item
+
+
+

@@ -1463,6 +1463,24 @@ var_dump($delete->execute());
 
 117 - PDO Buscando Dados
 
+```php
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM produtos WHERE id = :id";
+$select = $conexao->prepare($sql);
+
+$select->bindValue(':id', $id, PDO::PARAM_INT);
+
+$select->execute();
+
+echo '<pre>';
+var_dump($select->fetchAll(PDO::FETCH_ASSOC)); // varios itens
+var_dump($select->fetchA(PDO::FETCH_ASSOC));// apenas 1 item
+
+
+```
+
 118 - Form e Banco de Dados
 
 119 - Conclusões
