@@ -14,9 +14,11 @@ https://codeexperts.com.br/
 6. [6. Estruturas de Controle: Condicional](#parte6)     
 7. [7. Arrays & Estruturas de Repetição](#parte7)     
 8. [8. Iniciando Mini-Projeto](#parte8)     
-8. [9. PHP & Formulários](#parte9)     
-8. [10. Começando com Banco de Dados](#parte10)     
-8. [11. PHP & Banco de Dados](#parte11)     
+9. [9. PHP & Formulários](#parte9)     
+10. [10. Começando com Banco de Dados](#parte10)     
+11. [11. PHP & Banco de Dados](#parte11)     
+12. [12. Funções & Organizando CRUD](#parte12)     
+13. [13. Estilizando Painel e Upload de Arquivos](#parte13)     
 ---
 
 
@@ -1527,6 +1529,77 @@ if ($pagina == '/produto/salvar') {
 ```
 
 119 - Conclusões
+
+[Voltar ao Índice](#indice)
+
+---
+
+
+## <a name="parte12">12. Funções & Organizando CRUD</a>
+
+- 120 - Introdução
+
+- 121 - Funções
+
+- 122 - Parâmetros Funções
+
+- 123 - Variadic Functions
+
+- 124 - Escopo de Funções
+
+- 125 - Funções Anônimas e Arrow Functions
+
+- 126 - Iniciando Funções CRUD
+
+- 127 - Função Criar Dados
+
+- 128 - Função Atualizar Dados
+
+- 129 - Função Remover e Testando Criar
+
+- 130 - Organizando Rotas para Telas
+
+- 131 - Listagem de Produtos
+
+- 132 - Tela de Edição
+
+- 133 - Processando Atualização
+
+- 134 - Removendo Dados
+
+- 135 - Conclusão
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte13">13. Estilizando Painel e Upload de Arquivos</a>
+
+- 136 - Introdução
+
+- 137 - O Bootstrap 5
+
+- 138 - Estilizando Listagem
+
+- 139 - Estilizando Forms
+
+- 140 - Iniciando Upload
+
+- 141 - Imagens com Nome Único
+
+- 142 - Coluna Foto Produto
+
+- 143 - Salvando Foto Produto
+
+- 144 - Organizando Lógica Upload
+
+- 145 - Função Upload no Criar
+
+- 146 - Exibindo Imagem Produto
+
+- 147 - Conclusões
+
 
 [Voltar ao Índice](#indice)
 
