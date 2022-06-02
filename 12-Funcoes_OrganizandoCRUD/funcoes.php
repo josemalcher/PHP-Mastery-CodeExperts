@@ -41,7 +41,15 @@ array(3) {
   [2]=>
   string(9) "Cassandra"
 }
-
-
  */
+
+// escopo
+$nome = "alex";
+function nomeEscopo($nome)
+{
+    echo $nome;
+}
+echo $nome; // alex
+
+
 
