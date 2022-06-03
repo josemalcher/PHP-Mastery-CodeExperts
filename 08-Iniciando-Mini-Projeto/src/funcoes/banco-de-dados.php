@@ -43,14 +43,22 @@ function criar($tabela, $dados)
 
     // echo $sql;
 }
-
 // criar('produtos', ['nome'=>'Mouse', 'preco' => 19.9, 'descricao'=>'descrição do produto Mouse']);
 
-
-function atualizar()
+function atualizar($tabela, $dados)
 {
+    // UPDATE produtos SET coluna = :valor, coluna2 = :valor WHERE id = :id
+    $keys = array_keys($dados);
+    $binds = '';
+    foreach ($keys as $key) {
+        $binds .= $key . ' = :' . $key . ', ';
+    }
+    $sql = 'UPDATE '. $tabela . ' SET ' . $binds ;
 
+    echo $sql;
 }
+
+atualizar('produtos', ['nome'=>'Produto Teste', 'preco' => 19.99]);
 
 function remover()
 {
