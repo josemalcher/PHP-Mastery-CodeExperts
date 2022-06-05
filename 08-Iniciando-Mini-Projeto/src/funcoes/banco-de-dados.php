@@ -51,14 +51,25 @@ function atualizar($tabela, $dados)
     $keys = array_keys($dados);
     $binds = '';
     foreach ($keys as $key) {
-        $binds .= $key . ' = :' . $key . ', ';
+        $binds .= $binds ?
+                            ', ' . $key . ' = :' .$key
+                            : $key . ' = :' . $key;
     }
-    $sql = 'UPDATE '. $tabela . ' SET ' . $binds ;
+    $sql = 'UPDATE '. $tabela . ' SET ' . $binds  . 'WHERE id = :id';
 
-    echo $sql;
+    // echo $sql;
+
+    $atualizar = $conexao->prepare($sql);
+    foreach ($dados as $key => $valor) {
+        $atualizar->bindValue(':' . $key, $valor, is_integer($valor) ?
+            PDO::PARAM_INT :
+            PDO::PARAM_STR);
+    }
+    return $atualizar->execute();
+
 }
 
-atualizar('produtos', ['nome'=>'Produto Teste', 'preco' => 19.99]);
+// atualizar('produtos', ['nome'=>'Produto Teste', 'preco' => 19.99]);
 
 function remover()
 {
