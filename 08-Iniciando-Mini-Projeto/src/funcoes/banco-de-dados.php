@@ -1,6 +1,6 @@
 <?php
 
-function select($tabela, $colunas)
+function select($tabela, $colunas, $conexao)
 {
     $sql = 'SELECT ' . $colunas . ' FROM ' . $tabela;
 
@@ -8,7 +8,7 @@ function select($tabela, $colunas)
     return $select->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function selectWhere($tabela, $id, $colunas = '*')
+function selectWhere($tabela, $id, $colunas = '*', $conexao)
 {
     $sql = 'SELECT ' . $colunas . ' FROM ' . $tabela . 'WHERE id = :id';
 
@@ -21,7 +21,7 @@ function selectWhere($tabela, $id, $colunas = '*')
     return $select->fetch(PDO::FETCH_ASSOC);
 }
 
-function criar($tabela, $dados)
+function criar($tabela, $dados, $conexao)
 {
 
     $keys = array_keys($dados);
@@ -32,6 +32,8 @@ function criar($tabela, $dados)
                 /*'(nome, descricao, sobre, preco, status, criacao_em, atualizacao_em)
         VALUES()';*/
 
+    // echo $sql; die;
+
     $inserir = $conexao->prepare($sql);
 
     foreach ($dados as $key => $valor) {
@@ -39,13 +41,14 @@ function criar($tabela, $dados)
                                                 PDO::PARAM_INT :
                                                 PDO::PARAM_STR);
     }
-    return $inserir->execute();
+    $inserir->execute();
+    return $conexao->lastInsertId();
 
     // echo $sql;
 }
 // criar('produtos', ['nome'=>'Mouse', 'preco' => 19.9, 'descricao'=>'descrição do produto Mouse']);
 
-function atualizar($tabela, $dados)
+function atualizar($tabela, $dados, $conexao)
 {
     // UPDATE produtos SET coluna = :valor, coluna2 = :valor WHERE id = :id
     $keys = array_keys($dados);
@@ -71,7 +74,15 @@ function atualizar($tabela, $dados)
 
 // atualizar('produtos', ['nome'=>'Produto Teste', 'preco' => 19.99]);
 
-function remover()
+function remover($tabela, $id, $conexao)
 {
+    // DELETE FROM produtos WHERE id = :id
+    $sql = 'DELETE FROM ' . $tabela . ' WHERE id = :id';
+
+    $remover = $conexao->prepare($sql);
+
+    $remover->bindValue(':id', $id, PDO::PARAM_INT);
+
+    return $remover->execeute();
 
 }

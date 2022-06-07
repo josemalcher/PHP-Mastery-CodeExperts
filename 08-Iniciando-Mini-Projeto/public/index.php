@@ -65,11 +65,11 @@ if ($pagina == '/produto/salvar') {
     $dadosForm['valor'] = str_replace(['.', ','], ['', '.'], $dadosForm['valor']);
 
 
-    $sql = "INSERT INTO produtos
-        (nome, descricao, sobre, preco, status, criacao_em, atualizacao_em)
-        VALUES
-               (:nome, :descricao, :sobre, :preco, :status, NOW(), NOW())
-        ";
+//    $sql = "INSERT INTO produtos
+//        (nome, descricao, sobre, preco, status, criacao_em, atualizacao_em)
+//        VALUES
+//               (:nome, :descricao, :sobre, :preco, :status, NOW(), NOW())
+//        ";
 
 //    $post = [
 //        'nome' => 'Produto Statement',
@@ -78,18 +78,20 @@ if ($pagina == '/produto/salvar') {
 //        'preco' => 22.99,
 //        'status' => 1
 //    ];
-
-    $insert = $conexao->prepare($sql);
-
-    $insert->bindValue(':nome', $dadosForm['nome'], PDO::PARAM_STR);
-    $insert->bindValue(':descricao', $dadosForm['descricao'], PDO::PARAM_STR);
-    $insert->bindValue(':sobre', $dadosForm['sobre'], PDO::PARAM_STR);
-    $insert->bindValue(':preco', $dadosForm['valor'], PDO::PARAM_STR);
-    $insert->bindValue(':status', $dadosForm['status'], PDO::PARAM_INT);
-
-    $insert->execute();
-
-    // var_dump($insert->execute());
-    echo $conexao->lastInsertId();
+//
+//    $insert = $conexao->prepare($sql);
+//
+//    $insert->bindValue(':nome', $dadosForm['nome'], PDO::PARAM_STR);
+//    $insert->bindValue(':descricao', $dadosForm['descricao'], PDO::PARAM_STR);
+//    $insert->bindValue(':sobre', $dadosForm['sobre'], PDO::PARAM_STR);
+//    $insert->bindValue(':preco', $dadosForm['valor'], PDO::PARAM_STR);
+//    $insert->bindValue(':status', $dadosForm['status'], PDO::PARAM_INT);
+//
+//    $insert->execute();
+//
+//    // var_dump($insert->execute());
+//    echo $conexao->lastInsertId();
+    unset($dadosForm['estoque']);
+    echo criar('produtos', $dadosForm, $conexao);
 
 }

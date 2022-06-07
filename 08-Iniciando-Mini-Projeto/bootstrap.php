@@ -1,10 +1,11 @@
 <?php
 
 require __DIR__ . '/src/funcoes/conexao.php';
+require __DIR__ . '/src/funcoes/banco-de-dados.php';
 //die;
 
 // configurações Projeto
-define('HOME', 'http://localhost:8081');
+define('HOME', 'http://localhost:3030');
 define('PROJETO', 'Codigo Estoque');
 define('TEMPLATES', __DIR__ . '/templates');
 
