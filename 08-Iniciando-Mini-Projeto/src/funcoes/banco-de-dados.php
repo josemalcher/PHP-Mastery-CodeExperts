@@ -8,7 +8,7 @@ function select($tabela, $colunas, $conexao)
     return $select->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function selectWhere($tabela, $id, $colunas = '*', $conexao)
+function selectWhere($tabela, $id, $conexao , $colunas = '*' )
 {
     $sql = 'SELECT ' . $colunas . ' FROM ' . $tabela . 'WHERE id = :id';
 
