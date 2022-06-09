@@ -10,7 +10,7 @@ function recuperar($tabela, $colunas, $conexao)
 
 function recuperarPeloID($tabela, $id, $conexao , $colunas = '*' )
 {
-    $sql = 'SELECT ' . $colunas . ' FROM ' . $tabela . 'WHERE id = :id';
+    $sql = 'SELECT ' . $colunas . ' FROM ' . $tabela . ' WHERE id = :id';
 
     $select = $conexao->prepare($sql);
 

@@ -1,0 +1,38 @@
+<?php require TEMPLATES . '/includes/cabecalho.phtml' ?>
+<h1>Editar Produtos</h1>
+<form action="<?php echo HOME;?>?pagina=/produto/salvar" method="post" enctype="multipart/form-data">
+    <div>
+        <label>Nome Completo</label>
+        <input type="text" name="nome" id="nome" placeholder="Seu Nome Completo" value="<?= $produto['nome'];?>">
+    </div>
+    <div>
+        <label>Descrição</label>
+        <input type="text" name="descricao" id="descricao" placeholder="Descrição do Produto"  value="<?= $produto['descricao'];?>">
+    </div>
+    <div>
+        <label>Sobre</label>
+        <textarea name="sobre" id="sobre" placeholder="Sobre o Produto">
+            <?= $produto['sobre'];?>
+        </textarea>
+    </div>
+    <div>
+        <label>Valor</label>
+        <input type="text" name="valor" id="valor" placeholder="Valor do Produto"  value="<?= number_format($produto['valor'], 2, ',', '.')?>">
+    </div>
+
+    <div>
+        <label>Status</label>
+        <input type="number" name="quantidade" id="quantidade" placeholder="Quantidade Estoque do produto..."  value="<?= $produto['quantidade'];?>">
+    </div>
+    <div>
+        <label>Status</label>
+        <select name="status" id="status">
+            <option value="1" <?=$produto['status'] == 1 ? 'selected' : ''?>>Ativo</option>
+            <option value="2" <?=$produto['status'] == 2 ? 'selected' : ''?>>Inativo</option>
+        </select>
+    </div>
+
+    <button>Atualizar Produto</button>
+
+</form>
+<?php require TEMPLATES . '/includes/rodape.phtml' ?>

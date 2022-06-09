@@ -9,12 +9,12 @@ if ($pagina == '/produtos') {
 // if ($codigoProduto) {
 // $produtoDetalhe = '';
 
-/*foreach (PRODUTOS as $produto) {
-if ($produto['codigo'] == $codigoProduto) {
-$produtoDetalhe = $produto;
-break;
-// }
-}*/
+    /*foreach (PRODUTOS as $produto) {
+    if ($produto['codigo'] == $codigoProduto) {
+    $produtoDetalhe = $produto;
+    break;
+    // }
+    }*/
 // Melhoria:
 // $produtoDetalhe = array_filter(PRODUTOS, function ($produto) use ($codigoProduto) {
 // return $produto['codigo'] == $codigoProduto;
@@ -31,8 +31,20 @@ break;
     require TEMPLATES . '/produtos/listar.phtml';
 }
 if ($pagina == '/produtos/criar') {
-require TEMPLATES . '/criar.phtml';
+    require TEMPLATES . '/criar.phtml';
 }
+
+if ($pagina == '/produtos/editar') {
+
+    $produto = $_GET['produto'] ??= null;
+
+    if (!$produto) die('É preciso informar um produto para edição');
+
+    $produto = recuperarPeloID('produtos', $produto, $conexao, '*');
+
+    require TEMPLATES . '/produtos/editar.phtml';
+}
+
 if ($pagina == '/produtos/salvar') {
 // print '<pre>';
     // var_dump($_POST); // array(4) { ["nome"]=> string(0) "" ["descricao"]=> string(0) "" ["sobre"]=> string(8) " " ["valor"]=> string(0) "" }
