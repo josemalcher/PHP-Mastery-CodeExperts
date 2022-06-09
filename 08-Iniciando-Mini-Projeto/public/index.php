@@ -22,7 +22,7 @@ if ($pagina == '/') {
     //require - Mata a aplicação se houve erro ou não encontrar o arquivo
 
     $titulo = 'Listagem de Produto';
-    require TEMPLATES . '/lista.phtml';
+    require TEMPLATES . '/listar.phtml';
 }
 
 require PASTA_ROTAS . '/produtos.php';

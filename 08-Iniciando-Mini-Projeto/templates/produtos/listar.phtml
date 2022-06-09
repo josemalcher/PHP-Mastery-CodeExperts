@@ -1,0 +1,25 @@
+<?php require TEMPLATES . '/includes/cabecalho.phtml' ?>
+    <div>
+        <h2>Produtos</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Produto</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($produtos as $produto) : ?>
+                    <tr>
+                        <td><?= $produto['id'] ?></td>
+                        <td><?= $produto['nome'] ?></td>
+                        <td><a href="<?= HOME ?>/?pagina=/produtos/editar&produto=<?= $produto['id'] ?>">Ver
+                                Produto </a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+    </div>
+<?php require TEMPLATES . '/includes/rodape.phtml' ?>

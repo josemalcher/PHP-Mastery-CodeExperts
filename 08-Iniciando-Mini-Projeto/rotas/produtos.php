@@ -1,34 +1,37 @@
 <?php
 
-if ($pagina == ''/produtos) {
+if ($pagina == '/produtos') {
 //echo 'Detalhe do Produto';
 // http://localhost:8088/?pagina=/produto
 
-$codigoProduto = isset($_GET['codigo']) ? $_GET['codigo'] : '';
+// $codigoProduto = isset($_GET['codigo']) ? $_GET['codigo'] : '';
 
-if ($codigoProduto) {
+// if ($codigoProduto) {
 // $produtoDetalhe = '';
 
 /*foreach (PRODUTOS as $produto) {
 if ($produto['codigo'] == $codigoProduto) {
 $produtoDetalhe = $produto;
 break;
-}
+// }
 }*/
 // Melhoria:
-$produtoDetalhe = array_filter(PRODUTOS, function ($produto) use ($codigoProduto) {
-return $produto['codigo'] == $codigoProduto;
-});
-$produtoDetalhe = current($produtoDetalhe);
-}
-if (!$codigoProduto || !isset($produtoDetalhe) || !$produtoDetalhe) {
-die('Produto não existe');
-}
-$titulo = 'Detalhes do Produto';
-require TEMPLATES . '/produto.phtml';
+// $produtoDetalhe = array_filter(PRODUTOS, function ($produto) use ($codigoProduto) {
+// return $produto['codigo'] == $codigoProduto;
+// });
+// $produtoDetalhe = current($produtoDetalhe);
+// }
+//if (!$codigoProduto || !isset($produtoDetalhe) || !$produtoDetalhe) {
+//die('Produto não existe');
+//}
+//$titulo = 'Detalhes do Produto';
+
+    $produtos = recuperar('produtos', '*', $conexao);
+    // var_dump($produtos);
+    require TEMPLATES . '/produtos/listar.phtml';
 }
 if ($pagina == '/produtos/criar') {
-require TEMPLATES . '/criar-produto.phtml';
+require TEMPLATES . '/criar.phtml';
 }
 if ($pagina == '/produtos/salvar') {
 // print '<pre>';

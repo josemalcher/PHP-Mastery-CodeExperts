@@ -1,8 +1,0 @@
-<?php require TEMPLATES . '/includes/cabecalho.phtml' ?>
-<?php foreach (PRODUTOS as $produto) : ?>
-    <a href="<?php echo HOME ?>/?pagina=/produto&codigo=<?php echo $produto['codigo'] ?>">
-        Ver Produto </a> -
-    <?php echo $produto['nome'] ?> -
-    <?php echo $produto['preco'] ?> <br>
-<?php endforeach; ?>
-<?php require TEMPLATES . '/includes/rodape.phtml' ?>

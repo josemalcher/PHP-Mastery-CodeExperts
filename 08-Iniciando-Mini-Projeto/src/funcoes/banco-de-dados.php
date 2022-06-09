@@ -1,6 +1,6 @@
 <?php
 
-function select($tabela, $colunas, $conexao)
+function recuperar($tabela, $colunas, $conexao)
 {
     $sql = 'SELECT ' . $colunas . ' FROM ' . $tabela;
 
@@ -8,7 +8,7 @@ function select($tabela, $colunas, $conexao)
     return $select->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function selectWhere($tabela, $id, $conexao , $colunas = '*' )
+function recuperarPeloID($tabela, $id, $conexao , $colunas = '*' )
 {
     $sql = 'SELECT ' . $colunas . ' FROM ' . $tabela . 'WHERE id = :id';
 
