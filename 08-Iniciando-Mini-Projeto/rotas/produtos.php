@@ -85,3 +85,16 @@ if ($pagina == '/produtos/salvar') {
     echo criar('produtos', $dadosForm, $conexao);
 
 }
+if ($pagina == '/produtos/atualizar') {
+
+    $dadosForm = $_POST;
+
+    $produto = $_GET['produto'] ??= null;
+    if (!$produto) die('É preciso informar um produto para edição');
+
+    $dadosForm['valor'] = str_replace(['.', ','], ['', '.'], $dadosForm['valor']);
+
+    atualizar('produtos', $produto, $dadosForm, $conexao);
+
+    return header('Location:'.HOME.'?pagina=/produtos');
+}

@@ -48,7 +48,7 @@ function criar($tabela, $dados, $conexao)
 }
 // criar('produtos', ['nome'=>'Mouse', 'preco' => 19.9, 'descricao'=>'descrição do produto Mouse']);
 
-function atualizar($tabela, $dados, $conexao)
+function atualizar($tabela,$id, $dados, $conexao)
 {
     // UPDATE produtos SET coluna = :valor, coluna2 = :valor WHERE id = :id
     $keys = array_keys($dados);
@@ -58,16 +58,20 @@ function atualizar($tabela, $dados, $conexao)
                             ', ' . $key . ' = :' .$key
                             : $key . ' = :' . $key;
     }
-    $sql = 'UPDATE '. $tabela . ' SET ' . $binds  . 'WHERE id = :id';
 
-    // echo $sql;
+    $sql = 'UPDATE '. $tabela . ' SET ' . $binds  . ' WHERE id = :id';
+
+    // echo $sql; die;
 
     $atualizar = $conexao->prepare($sql);
+
+
     foreach ($dados as $key => $valor) {
         $atualizar->bindValue(':' . $key, $valor, is_integer($valor) ?
             PDO::PARAM_INT :
             PDO::PARAM_STR);
     }
+    $atualizar->bindValue(':id', $id, PDO::PARAM_INT);
     return $atualizar->execute();
 
 }
