@@ -31,7 +31,7 @@ if ($pagina == '/produtos') {
     require TEMPLATES . '/produtos/listar.phtml';
 }
 if ($pagina == '/produtos/criar') {
-    require TEMPLATES . '/criar.phtml';
+    require TEMPLATES . '/produtos/criar.phtml';
 }
 
 if ($pagina == '/produtos/editar') {
@@ -95,6 +95,16 @@ if ($pagina == '/produtos/atualizar') {
     $dadosForm['valor'] = str_replace(['.', ','], ['', '.'], $dadosForm['valor']);
 
     atualizar('produtos', $produto, $dadosForm, $conexao);
+
+    return header('Location:'.HOME.'?pagina=/produtos');
+}
+if ($pagina == '/produtos/remover') {
+
+    $produto = $_GET['produto'] ??= null;
+
+    if (!$produto) die('É preciso informar um produto para remover!');
+
+    $produto = remover('produtos', $produto, $conexao);
 
     return header('Location:'.HOME.'?pagina=/produtos');
 }

@@ -82,11 +82,11 @@ function remover($tabela, $id, $conexao)
 {
     // DELETE FROM produtos WHERE id = :id
     $sql = 'DELETE FROM ' . $tabela . ' WHERE id = :id';
-
+    // echo $sql; die;
     $remover = $conexao->prepare($sql);
 
     $remover->bindValue(':id', $id, PDO::PARAM_INT);
 
-    return $remover->execeute();
+    return $remover->execute();
 
 }

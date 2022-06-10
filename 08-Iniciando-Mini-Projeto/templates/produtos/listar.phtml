@@ -1,6 +1,7 @@
 <?php require TEMPLATES . '/includes/cabecalho.phtml' ?>
     <div>
         <h2>Produtos</h2>
+        <a href="<?= HOME . '?pagina=/produtos/criar' ?>">Criar Produtos</a>
         <table>
             <thead>
             <tr>
@@ -10,14 +11,16 @@
             </tr>
             </thead>
             <tbody>
-                <?php foreach ($produtos as $produto) : ?>
-                    <tr>
-                        <td><?= $produto['id'] ?></td>
-                        <td><?= $produto['nome'] ?></td>
-                        <td><a href="<?= HOME ?>/?pagina=/produtos/editar&produto=<?= $produto['id'] ?>">Ver
-                                Produto </a></td>
-                    </tr>
-                <?php endforeach; ?>
+            <?php foreach ($produtos as $produto) : ?>
+                <tr>
+                    <td><?= $produto['id'] ?></td>
+                    <td><?= $produto['nome'] ?></td>
+                    <td><a href="<?= HOME ?>/?pagina=/produtos/editar&produto=<?= $produto['id'] ?>">Editar Produto </a>
+                    </td>
+                    <td>|</td>
+                    <td><a href="<?= HOME ?>/?pagina=/produtos/remover&produto=<?= $produto['id'] ?>">Remover </a></td>
+                </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
 
