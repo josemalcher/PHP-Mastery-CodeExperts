@@ -2,6 +2,7 @@
 
 require __DIR__ . '/src/funcoes/conexao.php';
 require __DIR__ . '/src/funcoes/banco-de-dados.php';
+require __DIR__ . '/src/funcoes/uploads.php';
 //die;
 
 // configurações Projeto

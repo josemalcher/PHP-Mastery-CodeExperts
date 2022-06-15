@@ -113,28 +113,12 @@ if ($pagina == '/produtos/atualizar') {
 
     $dadosForm['valor'] = str_replace(['.', ','], ['', '.'], $dadosForm['valor']);
 
-    $foto = $_FILES['foto'];
+    $arquivoAtual = recuperarPeloID('produtos', $produto, $conexao,'foto');
 
-    $extensao = strrchr($foto['name'], '.');
-    $nomeNome = md5($foto['name']) . uniqid() . $extensao;
-
-    if (!is_dir(PASTA_UPLOADS)) {
-        // IDE CREATED
-        if (!mkdir($concurrentDirectory = PASTA_UPLOADS, 755, true) && !is_dir($concurrentDirectory)) {
-            throw new \RuntimeException(sprintf('Directory "%s" was not created', $concurrentDirectory));
-        }
+    if($foto = upload($_FILES['foto'], 'produtos', $arquivoAtual['foto'])){
+        $dadosForm['foto'] = $foto;
     }
 
-    if(move_uploaded_file($foto['tmp_name'], PASTA_UPLOADS . $nomeNome)){
-
-        $fotoAtual = recuperarPeloID('produtos', $produto,$conexao,'foto');
-
-        if ($fotoAtual['foto'] && file_exists(PASTA_UPLOADS . $fotoAtual['foto'])) {
-            unlink(PASTA_UPLOADS . $fotoAtual['foto']);
-        }
-
-        $dadosForm['foto'] = $nomeNome;
-    }
 
 
 
