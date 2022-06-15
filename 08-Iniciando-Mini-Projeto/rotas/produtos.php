@@ -54,20 +54,8 @@ if ($pagina == '/produtos/salvar') {
 
     $dadosForm['valor'] = str_replace(['.', ','], ['', '.'], $dadosForm['valor']);
 
-    $foto = $_FILES['foto'];
-
-    $extensao = strrchr($foto['name'], '.');
-    $nomeNome = md5($foto['name']) . uniqid() . $extensao;
-
-    if (!is_dir(PASTA_UPLOADS)) {
-        // IDE CREATED
-        if (!mkdir($concurrentDirectory = PASTA_UPLOADS, 755, true) && !is_dir($concurrentDirectory)) {
-            throw new \RuntimeException(sprintf('Directory "%s" was not created', $concurrentDirectory));
-        }
-    }
-
-    if(move_uploaded_file($foto['tmp_name'], PASTA_UPLOADS . $nomeNome)){
-        $dadosForm['foto'] = $nomeNome;
+    if ($foto = upload($_FILES['foto'], 'produtos')) {
+        $dadosForm['foto'] = $foto;
     }
 
 //    echo "<pre>";
@@ -101,9 +89,11 @@ if ($pagina == '/produtos/salvar') {
 //    // var_dump($insert->execute());
 //    echo $conexao->lastInsertId();
     unset($dadosForm['estoque']);
-    echo criar('produtos', $dadosForm, $conexao);
+    $produtoID = criar('produtos', $dadosForm, $conexao);
 
+    return header('Location: ' . HOME . '?pagina=/produtos/editar&produto=' . $produtoID);
 }
+
 if ($pagina == '/produtos/atualizar') {
 
     $dadosForm = $_POST;
@@ -113,13 +103,11 @@ if ($pagina == '/produtos/atualizar') {
 
     $dadosForm['valor'] = str_replace(['.', ','], ['', '.'], $dadosForm['valor']);
 
-    $arquivoAtual = recuperarPeloID('produtos', $produto, $conexao,'foto');
+    $arquivoAtual = recuperarPeloID('produtos', $produto, $conexao, 'foto');
 
-    if($foto = upload($_FILES['foto'], 'produtos', $arquivoAtual['foto'])){
+    if ($foto = upload($_FILES['foto'], 'produtos', $arquivoAtual['foto'])) {
         $dadosForm['foto'] = $foto;
     }
-
-
 
 
     atualizar('produtos', $produto, $dadosForm, $conexao);
