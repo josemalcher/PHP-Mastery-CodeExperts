@@ -9,6 +9,7 @@
             <thead>
             <tr>
                 <th>#</th>
+                <th>Foto</th>
                 <th>Produto</th>
                 <th>Ações</th>
             </tr>
@@ -17,6 +18,13 @@
             <?php foreach ($produtos as $produto) : ?>
                 <tr>
                     <td><?= $produto['id'] ?></td>
+                    <td width="10%">
+                        <?php if($produto['foto']): ?>
+                            <img class="img-fluid" src="<?=HOME.'/uploads/images/'. $produto['foto'] ?>" alt="">
+                        <?php else:?>
+                            <p>Sem Foto</p>
+                        <?php endif;?>
+                    </td>
                     <td><?= $produto['nome'] ?></td>
                     <td><a class="btn btn-sm btn-primary"
                            href="<?= HOME ?>/?pagina=/produtos/editar&produto=<?= $produto['id'] ?>">Editar </a>

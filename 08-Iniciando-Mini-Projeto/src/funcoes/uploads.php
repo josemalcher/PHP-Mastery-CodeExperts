@@ -4,7 +4,7 @@ function upload($arquivo, $subpasta = null, $imagemRemover = null)
 {
 
     $extensao = strrchr($arquivo['name'], '.');
-    $nomeNome = md5($arquivo['name']) . uniqid() . $extensao;
+    $novoNome = md5($arquivo['name']) . uniqid() . $extensao;
 
     if (!is_dir(PASTA_UPLOADS)) {
         // IDE CREATED
@@ -19,16 +19,15 @@ function upload($arquivo, $subpasta = null, $imagemRemover = null)
         }
     }
 
-    $novoNome = $subpasta ? $subpasta . '/' . $nomeNome
-                                    : $nomeNome;
+    $novoNome = $subpasta ? $subpasta . '/' . $novoNome: $novoNome;
 
     if (!move_uploaded_file($arquivo['tmp_name'], PASTA_UPLOADS .  $novoNome)) {
         return false;
     }
 
-    if ($imagemRemover && file_exists(PASTA_UPLOADS . $imagemRemover)) {
+    if ($imagemRemover && file_exists($subpasta.PASTA_UPLOADS . $imagemRemover)) {
         unlink(PASTA_UPLOADS . $imagemRemover);
     }
 
-    return $nomeNome;
+    return $novoNome;
 }
