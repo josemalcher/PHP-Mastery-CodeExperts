@@ -56,7 +56,17 @@ if ($pagina == '/produtos/salvar') {
 
     $foto = $_FILES['foto'];
 
-    move_uploaded_file($foto['tmp_name'], __DIR__ . '/../public/' . $foto['name']);
+    $extensao = strrchr($foto['name'], '.');
+    $nomeNome = md5($foto['name']) . uniqid('', true) . $extensao;
+
+    if (!is_dir(PASTA_UPLOADS)) {
+        // IDE CREATED
+        if (!mkdir($concurrentDirectory = PASTA_UPLOADS, 755, true) && !is_dir($concurrentDirectory)) {
+            throw new \RuntimeException(sprintf('Directory "%s" was not created', $concurrentDirectory));
+        }
+    }
+
+    move_uploaded_file($foto['tmp_name'], __DIR__ . '/../public/uploads/images/' . $nomeNome);
 
     echo "<pre>";
     var_dump($foto);
@@ -103,7 +113,7 @@ if ($pagina == '/produtos/atualizar') {
 
     atualizar('produtos', $produto, $dadosForm, $conexao);
 
-    return header('Location:'.HOME.'?pagina=/produtos');
+    return header('Location:' . HOME . '?pagina=/produtos');
 }
 if ($pagina == '/produtos/remover') {
 
@@ -113,5 +123,5 @@ if ($pagina == '/produtos/remover') {
 
     $produto = remover('produtos', $produto, $conexao);
 
-    return header('Location:'.HOME.'?pagina=/produtos');
+    return header('Location:' . HOME . '?pagina=/produtos');
 }
