@@ -57,7 +57,7 @@ if ($pagina == '/produtos/salvar') {
     $foto = $_FILES['foto'];
 
     $extensao = strrchr($foto['name'], '.');
-    $nomeNome = md5($foto['name']) . uniqid('', true) . $extensao;
+    $nomeNome = md5($foto['name']) . uniqid() . $extensao;
 
     if (!is_dir(PASTA_UPLOADS)) {
         // IDE CREATED
@@ -66,11 +66,13 @@ if ($pagina == '/produtos/salvar') {
         }
     }
 
-    move_uploaded_file($foto['tmp_name'], __DIR__ . '/../public/uploads/images/' . $nomeNome);
+    if(move_uploaded_file($foto['tmp_name'], PASTA_UPLOADS . $nomeNome)){
+        $dadosForm['foto'] = $nomeNome;
+    }
 
-    echo "<pre>";
-    var_dump($foto);
-    die;
+//    echo "<pre>";
+//    var_dump($foto);
+//    die;
 
 //    $sql = "INSERT INTO produtos
 //        (nome, descricao, sobre, preco, status, criacao_em, atualizacao_em)
@@ -110,6 +112,31 @@ if ($pagina == '/produtos/atualizar') {
     if (!$produto) die('É preciso informar um produto para edição');
 
     $dadosForm['valor'] = str_replace(['.', ','], ['', '.'], $dadosForm['valor']);
+
+    $foto = $_FILES['foto'];
+
+    $extensao = strrchr($foto['name'], '.');
+    $nomeNome = md5($foto['name']) . uniqid() . $extensao;
+
+    if (!is_dir(PASTA_UPLOADS)) {
+        // IDE CREATED
+        if (!mkdir($concurrentDirectory = PASTA_UPLOADS, 755, true) && !is_dir($concurrentDirectory)) {
+            throw new \RuntimeException(sprintf('Directory "%s" was not created', $concurrentDirectory));
+        }
+    }
+
+    if(move_uploaded_file($foto['tmp_name'], PASTA_UPLOADS . $nomeNome)){
+
+        $fotoAtual = recuperarPeloID('produtos', $produto,$conexao,'foto');
+
+        if ($fotoAtual['foto'] && file_exists(PASTA_UPLOADS . $fotoAtual['foto'])) {
+            unlink(PASTA_UPLOADS . $fotoAtual['foto']);
+        }
+
+        $dadosForm['foto'] = $nomeNome;
+    }
+
+
 
     atualizar('produtos', $produto, $dadosForm, $conexao);
 
