@@ -1,6 +1,6 @@
 <?php require TEMPLATES . '/includes/cabecalho.phtml' ?>
 <h1>Criar Produtos</h1>
-<form action="<?php echo HOME;?>?pagina=/produto/salvar" method="post" enctype="multipart/form-data">
+<form action="<?php echo HOME;?>?pagina=/produtos/salvar" method="post" enctype="multipart/form-data">
     <div class="form-group mb-3">
         <label>Nome Completo</label>
         <input class="form-control"  type="text" name="nome" id="nome" placeholder="Seu Nome Completo">
@@ -33,7 +33,7 @@
 
     <div class="form-group mb-3">
         <label>Fotos Produtos</label>
-        <input class="form-control" type="file" name="foto[]" multiple>
+        <input class="form-control" type="file" name="foto" multiple>
 
     </div>
 

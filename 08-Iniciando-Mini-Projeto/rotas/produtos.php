@@ -54,6 +54,13 @@ if ($pagina == '/produtos/salvar') {
 
     $dadosForm['valor'] = str_replace(['.', ','], ['', '.'], $dadosForm['valor']);
 
+    $foto = $_FILES['foto'];
+
+    move_uploaded_file($foto['tmp_name'], __DIR__ . '/../public/' . $foto['name']);
+
+    echo "<pre>";
+    var_dump($foto);
+    die;
 
 //    $sql = "INSERT INTO produtos
 //        (nome, descricao, sobre, preco, status, criacao_em, atualizacao_em)
