@@ -951,6 +951,17 @@ print '<br>';
 //10 não é igual a 30 mas continua sendo menor que 30
 print $num1 <= $num2;
 
+
+```
+
+[Voltar ao Índice](#indice)
+
+---
+
+
+## <a name="parte43">43 - 38 - Spaceship Operator</a>
+
+```php
 //Uso do Operador de Comparação Spaceship: <=>
 
 $num1 = 2;
@@ -968,15 +979,6 @@ print $num2 <=> $num1; // -1
 print '<br>';
 print $num2 <=> $num2; // 0
 ```
-
-[Voltar ao Índice](#indice)
-
----
-
-
-## <a name="parte43">43 - 38 - Spaceship Operator</a>
-
-
 
 [Voltar ao Índice](#indice)
 
