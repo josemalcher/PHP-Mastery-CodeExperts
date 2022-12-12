@@ -725,7 +725,27 @@ echo "{$nome}'s têm $anos anos"; // Nandersons têm 30 anos
 
 ## <a name="parte34">34 - 30 - NOWDOC & HEREDOC</a>
 
+```php
+<?php
+$nome = 'João';
+$cargo = 'Desenvolvedor';
 
+/*
+HEREDOC: Permite uma escrita com mais
+liberdade e interpreta códigos dinâmicos
+no texto.
+*/
+
+echo <<<HEREDOC
+Olá sou $nome, atuo como $cargo. <br>
+HEREDOC;
+// Olá sou João, atuo como Desenvolvedor.
+
+echo <<<'NOWDOC'
+Olá sou $nome, atuo como $cargo. <br>
+NOWDOC;
+// Olá sou $nome, atuo como $cargo.
+```
 
 [Voltar ao Índice](#indice)
 
