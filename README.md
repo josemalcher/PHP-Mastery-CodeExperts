@@ -987,7 +987,46 @@ print $num2 <=> $num2; // 0
 
 ## <a name="parte44">44 - 39 - Operadores de Atribuição</a>
 
+```php
+<?php
 
+$num = 10;
+
+$num += 5; //$num = $num + 5;
+
+echo $num; // 15
+echo '<br>';
+
+
+$num = 10;
+
+$num -= 5; //$num = $num - 5;
+
+echo $num; // 5
+echo '<br>';
+
+$num = 10;
+
+$num *= 5; //$num = $num * 5;
+
+echo $num; // 50
+echo '<br>';
+
+
+$num = 10;
+
+$num /= 5; //$num = $num / 5;
+
+echo $num; // 2
+
+echo '<br>';
+
+$nome = "João";
+
+$nome .=  " Castro"; //$nome . " Castro";
+
+echo $nome; // João Castro
+```
 
 [Voltar ao Índice](#indice)
 
@@ -996,7 +1035,36 @@ print $num2 <=> $num2; // 0
 
 ## <a name="parte45">45 - 40 - Operadores Lógicos</a>
 
+```php
+<?php
 
+// OR ou || e XOR
+
+//O ou lógico (OR ou ||) retorna verdadeiro
+//se um ou ambos os lados retornarem verdadeiro
+echo true || true || true; // 1
+
+echo '<br>';
+
+//Um lado ou outro podem retornar verdadeiro
+//mas não ambos.
+echo true XOR false;
+
+//E lógico: AND ou &&
+echo '<br>';
+
+//Todos os testes devem ser verdadeiros
+//Para que o E lógico retorne verdadeiro
+echo true AND true && true;
+
+//Negação
+echo '<br>';
+
+// negando um verdadeiro temos false
+// negando um falso, temos verdadeiro,
+// negação com negação retorna verdadeiro
+echo !true;
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1005,7 +1073,54 @@ print $num2 <=> $num2; // 0
 
 ## <a name="parte46">46 - 41 - Combinando Operadores Lógicos e Comparação</a>
 
+```php
+<?php
 
+$nome = '';
+$email = '';
+
+/*
+Quero validar que todos os
+campos(aqui representados por variáveis)
+sejam preenchidos...
+*/
+echo $nome == '' || $email == ''; // Verdadeiro
+
+
+//Se o usuário tem a idade esperada pelo sistema...
+
+$idade = 30;
+$idadeUsuario = 21;
+
+echo "<br>";
+
+/**
+ * Se o usuário não colocar uma idade esperada,
+ * que é 30, a comparação retorna false, quando
+ * eu nego essse resultado, com !, eu obtenho
+ * uma comprovação do resultado da comparação.
+ *
+ */
+echo !($idade == $idadeUsuario);
+
+
+
+/*
+ Verificar se o usuário tem uma idade entre
+ um espaço ou range interno do sistema.
+ Ex.: Ter entre 21 e 30 anos.
+ */
+echo '<br>';
+
+$idadeMinima = 21;
+$idadeMaxima = 30;
+
+$idadeUsuario = 31;
+
+
+echo $idadeUsuario >= $idadeMinima
+    && $idadeUsuario <= $idadeMaxima;
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1014,7 +1129,35 @@ print $num2 <=> $num2; // 0
 
 ## <a name="parte47">47 - 42 - Operador Incremento e Decremento</a>
 
+```php
+<?php
 
+$num = 1;
+
+//$num = $num + 1;
+echo $num++;
+echo '<br>';
+echo $num;
+
+echo '<br>';
+
+echo ++$num; //$num + 1 : 3
+echo '<br>';
+echo $num; // 3
+
+
+//$num = $num - 1;
+echo '<br>';
+
+echo $num--; //3
+echo '<br>';
+echo $num; //2
+echo '<br>';
+
+echo --$num; // 1
+echo '<br>';
+echo $num; //1
+```
 
 [Voltar ao Índice](#indice)
 
