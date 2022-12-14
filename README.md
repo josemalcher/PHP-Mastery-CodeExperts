@@ -1211,7 +1211,25 @@ echo $num; //1
 
 ## <a name="parte53">53 - 47 - Primeiras Estruturas Condicionais</a>
 
+```php
+<?php
+//Sintaxe básica de condicionais...
 
+if (false) {
+  echo "A condição foi satisfeita...";
+} else {
+  echo "A condição não foi satisfeita...";
+}
+
+//Sintaxe alternativa...
+
+if (false) :
+  echo "A condição foi satisfeita...";
+else :
+  echo "A condição não foi satisfeita...";
+endif;
+
+```
 
 [Voltar ao Índice](#indice)
 
