@@ -1338,7 +1338,18 @@ echo $quantidadeRecebida;
 
 ## <a name="parte57">57 - 51 - Mais da Escrita do If</a>
 
+```php
+<?php
 
+$idadeMinima = 21;
+$idadeMaxima = 30;
+
+$idadeUsuario = 31;
+
+
+if($idadeUsuario >= $idadeMinima && $idadeUsuario <= $idadeMaxima)
+  echo "Você possui a idade esperada!"; 
+```
 
 [Voltar ao Índice](#indice)
 
