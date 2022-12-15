@@ -1430,7 +1430,21 @@ var_dump($listaFrutas);
 
 ## <a name="parte63">63 - 56 - Arrays Associativos</a>
 
+```php
+<?php
 
+$usuario = [
+  'nome' => 'José Malcher JR',
+  'email' => 'malcher.malch@gmail.com',
+  'idade' => 38,
+  'altura' => 1.73,
+  'brasileiro' => true
+];
+
+
+echo $usuario['nome'] . ' com o e-mail ' . $usuario['email']
+  . ' têm a idade de ' . $usuario['idade'];
+```
 
 [Voltar ao Índice](#indice)
 
