@@ -1,5 +1,5 @@
 <?php
-
+echo "<br>";
 //inteiros 1,2,3,4,5,6,7,8,9 -1, -2
 echo -2;
 echo "<br>";
@@ -31,7 +31,7 @@ o php entende como float
 */
 echo 1.0; 
 //Retorna o tipo do dados informado no gettype
-echo gettype(1.0);
+echo gettype(1.0); // double
 
 echo "<br>";
 
@@ -39,9 +39,9 @@ echo "<br>";
 Contantes tamanho minimo e maximo 
 suportado pelo PHP para tipo inteiro
 */
-echo PHP_INT_MIN;
+echo PHP_INT_MIN; // -9223372036854775808
 echo "<br>";
-echo PHP_INT_MAX;
+echo PHP_INT_MAX; // 9223372036854775807
 
 echo "<br>";
 echo "<br>";
@@ -50,9 +50,9 @@ echo "<br>";
 Contantes tamanho minimo e maximo 
 suportado pelo PHP para tipo float
 */
-echo PHP_FLOAT_MIN;
+echo PHP_FLOAT_MIN; // 2.2250738585072E-308
 echo "<br>";
-echo PHP_FLOAT_MAX;
+echo PHP_FLOAT_MAX; // 1.7976931348623E+308
 
 echo "<br>";
 

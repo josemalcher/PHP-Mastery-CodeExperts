@@ -70,6 +70,12 @@ https://codeexperts.com.br/
 ### 18 - [MacOS] Olá Mundo
 ### 19 - [MacOS] Instalando Compose
 
+```
+
+$composer up -d
+
+```
+
 [Voltar ao Índice](#indice)
 
 ---
@@ -81,9 +87,210 @@ https://codeexperts.com.br/
 ### 21 - Comentários
 ### 22 - Valores Literais
 ### 23 - Tipos Básicos
+
+```php
+<?php
+
+echo "<br>";
+//Com tipo Inteiro
+echo 10000;
+
+echo "<br>";
+//Com tipo string: caracteres
+echo "Olá Mundo";
+
+echo "<br>";
+//Com tipo Booleano
+echo true; //exibe o valor 1
+
+echo "<br>";
+
+echo false; // não exibe nada
+
+echo "<br>";
+//Com tipo Ponto Flutuante
+echo 19.99;
+echo "<br>";
+echo 1099.90;
+```
+
 ### 24 - Inteiros / Ponto Flutuante
+
+```php
+<?php
+echo "<br>";
+//inteiros 1,2,3,4,5,6,7,8,9 -1, -2
+echo -2;
+echo "<br>";
+echo 2;
+
+echo "<br>";
+
+//Sistema Octal no PHP
+//Prefixado 0
+echo 0777; //retorna 511 
+
+echo "<br>";
+//Sistema Hexadecimal
+//Prefixado com 0x
+echo 0x1FF; //retorna 511
+
+echo "<br>";
+
+//Float
+echo 10.99;
+echo "<br>";
+echo 0.90;
+
+echo "<br>";
+
+echo "<br>";
+/*apesar de retornar 1, por conta do . 
+o php entende como float
+*/
+echo 1.0; 
+//Retorna o tipo do dados informado no gettype
+echo gettype(1.0); // double 
+
+echo "<br>";
+
+/*
+Contantes tamanho minimo e maximo 
+suportado pelo PHP para tipo inteiro
+*/
+echo PHP_INT_MIN; // -9223372036854775808
+echo "<br>";
+echo PHP_INT_MAX; // 9223372036854775807
+
+echo "<br>";
+echo "<br>";
+
+/*
+Contantes tamanho minimo e maximo 
+suportado pelo PHP para tipo float
+*/
+echo PHP_FLOAT_MIN; // 2.2250738585072E-308
+echo "<br>";
+echo PHP_FLOAT_MAX; // 1.7976931348623E+308
+
+echo "<br>";
+
+//Exponencial: 13.3 (E)levado a 10 +2 
+//(a virgula se movimenta 2 casas para a direita por conta do +2)
+echo 13.3e+2; //Res.: 1300.00
+echo "<br>";
+
+//Exponencial: 13.3 (E)levado a 10 -3 
+//(a virgula se movimenta 3 casas para a esquerda por conta do -3)
+echo 13.3e-3; // Res.: 0.0133
+```
+
 ### 25 - Strings
+
+```php
+<?php
+echo "<br>";
+echo "Isto é uma string...";
+echo "<br>";
+echo gettype("Isto é uma string...");
+
+echo '<br>';
+echo 'Isto é uma string com aspas simples...';
+echo '<br>';
+echo gettype('Isto é uma string...');
+
+echo '<br>';
+
+echo "PHP"[1]; // H
+echo "<br>";
+echo "ABC"[-3]; //indice negativos: PHP 7.1...
+echo "<br>";
+echo "Estou programando com " . "PHP";
+
+echo "<br>";
+
+echo 'Quero aprender \'PHP\'';
+
+echo "<br>";
+
+echo "Quero aprender \\ \"PHP\"";
+
+echo "<br>";
+
+echo "dsndsididnisd dsds
+ddsidnsidnsidnsindisd 
+dsdd dsodoskdoskdoksod dsokdsod
+sdosdsodksokdoskdo dksodksodkso";
+
+//NOWDOC e HEREDOC
+```
+
+
+```
+
+Isto é uma string...
+string
+Isto é uma string com aspas simples...
+string
+H
+A
+Estou programando com PHP
+Quero aprender 'PHP'
+Quero aprender \ "PHP"
+dsndsididnisd dsds ddsidnsidnsidnsindisd dsdd dsodoskdoskdoksod dsokdsod sdosdsodksokdoskdo dksodksodkso
+```
+
 ### 26 - Funções de Manipulação de Strings
+
+```php
+<?php
+
+//Conta os caracteres
+echo strlen("Testando Strings"); // 16
+echo "<br>";
+
+//Pegar parte da string
+//Pega a partir da posição 0, 7 caracteres
+echo substr("Testando Strings", 0, 7); // Testand
+echo "<br>";
+
+//Pega a partir da posição -4(i), 2(in) caracteres
+echo substr("Testando Strings", -4, 2); // in
+
+echo "<br>";
+
+//Pega da posição 7 até o fim da strings
+echo substr("Testando Strings", 7); // o Strings
+
+echo "<br>";
+//Pega da posição -7 até o fim da string
+echo substr("Testando Strings", -7); // Strings
+
+//adicionar caracteres extras
+
+echo "<br>";
+echo str_pad("Testee", 8, "-", STR_PAD_BOTH); // -Testee-
+
+//maiusculo e minusculo
+echo '<br>';
+echo strtoupper("fica maiuscula!"); // FICA MAIUSCULA!
+echo '<br>';
+echo strtolower("FICA MINUSCULA"); // fica minuscula
+
+//encontrar uma ocorrencia de caracter
+echo '<br>';
+echo strstr("image.jpeg", "."); // .jpeg
+
+echo '<br>';
+echo strchr("image.png", "."); // .png
+
+//substituir caracteres
+echo '<br>';
+echo str_replace("A", "x", "batata"); // batata
+echo '<br>';
+echo str_ireplace("A", "x", "batata"); // bxtxtx
+```
+
 ### 27 - Variáveis
 ### 28 - Praticando Variáveis
 ### 29 - Diferença Aspas Simples e Duplas

@@ -1,5 +1,5 @@
 <?php
-
+echo "<br>";
 //Conta os caracteres
 echo strlen("Testando Strings"); // 16
 echo "<br>";
