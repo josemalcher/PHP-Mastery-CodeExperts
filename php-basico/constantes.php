@@ -8,16 +8,16 @@ echo '<br>';
 echo '<br>';
 
 //Algumas constantes do PHP
-echo 'Constante PHP Versão:' . PHP_VERSION; // Constante PHP Versão:8.0.16
+echo 'Constante PHP Versão:' . PHP_VERSION; // Constante PHP Versão:8.3.2
 echo '<br>';
-echo 'Meu sistema é ' . PHP_OS; // Meu sistema é WINNT
+echo 'Meu sistema é ' . PHP_OS; // Meu sistema é Linux
 
 echo '<br>';
 echo '<br>';
 echo 'Estamos na pasta: ' . __DIR__;
-// Estamos na pasta: C:\Users\josem\Documents\workspaces\PHP-Mastery-CodeExperts\php-basico
+// Estamos na pasta: /var/www/html/php-basico
 
 echo '<br>';
 echo '<br>';
 echo 'Estamos na pasta: ' . __FILE__;
-// Estamos na pasta: C:\Users\josem\Documents\workspaces\PHP-Mastery-CodeExperts\php-basico\constantes.php
+// Estamos na pasta: /var/www/html/php-basico/constantes.php
