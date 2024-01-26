@@ -432,12 +432,273 @@ echo gettype($nome); // string
 
 ### 35 - Introdução
 ### 36 - Operadores Aritméticos
+
+```php
+<?php
+
+$num1 = 10;
+$num2 = 20;
+
+//Adição: +
+echo $num1 + $num2;
+echo '<br>';
+
+//Subtração: -
+echo $num1 - $num2;
+echo '<br>';
+
+//Multiplicação: *
+echo $num1 * $num2;
+echo '<br>';
+
+//Divisão: /
+echo $num1 / $num2;
+echo '<br>';
+
+//Módulo: % (Resto da Divisão)
+echo $num1 % $num2;
+echo '<br>';
+
+echo 3 ** 4; //3 * 3 * 3 * 3 = 81
+
+echo '<br>';
+
+//Precência de operadores
+echo 10 + 2 * 5; // 20
+```
+
 ### 37 - Operadores Comparação
+
+```php
+<?php
+
+$num1 = "30";
+$num2 = 30;
+
+
+//Igualdade: == ou ===
+print $num1 == $num2; //Compara valor
+print "<br>";
+print $num1 === $num2;//Compara valor e tipo
+
+$num1 = "20";
+
+//Operadores de Diferença
+print $num1 != $num2; //Diferença Valor
+print "<br>";
+print $num1 <> $num2; //Diferença Valor
+print "<br>";
+
+//Operador de não indentico: Tipo e Valor
+print $num1 !== $num2;
+
+//Operadores de Comparação Maior ou Maior Igual:
+print '<br>';
+
+$num1 = 10;
+$num2 = 10;
+
+print $num1 . ' não é maior que ' . $num2;
+print '<br>';
+print $num1 > $num2;
+print '<br>';
+print $num1 >= $num2;
+
+//Menor ou Igual
+
+$num1 = 30;
+$num2 = 30;
+
+print '<br>';
+print $num1 < $num2; //verdeiro
+print '<br>';
+
+//10 não é igual a 30 mas continua sendo menor que 30
+print $num1 <= $num2;
+
+```
+
 ### 38 - Spaceship Operator
+
+```php
+
+//Uso do Operador de Comparação Spaceship: <=>
+
+$num1 = 2;
+$num2 = 1;
+
+print '<br>';
+print 'Uso do Spaceship Operator';
+print '<br>';
+
+print $num1 <=> $num2; //1
+
+print '<br>';
+print $num2 <=> $num1; // -1
+
+print '<br>';
+print $num2 <=> $num2; // 0
+```
+
 ### 39 - Operadores de Atribuição
+
+```php
+<?php
+
+$num = 10;
+
+$num += 5; //$num = $num + 5;
+
+echo $num; // 15
+echo '<br>';
+
+
+$num = 10;
+
+$num -= 5; //$num = $num - 5;
+
+echo $num; // 5
+echo '<br>';
+
+$num = 10;
+
+$num *= 5; //$num = $num * 5;
+
+echo $num; // 50
+echo '<br>';
+
+
+$num = 10;
+
+$num /= 5; //$num = $num / 5;
+
+echo $num; // 2
+
+echo '<br>';
+
+$nome = "João";
+
+$nome .=  " Castro"; //$nome . " Castro";
+
+echo $nome; // João Castro
+```
+
 ### 40 - Operadores Lógicos
+
+```php
+<?php
+
+// OR ou || e XOR
+
+//O ou lógico (OR ou ||) retorna verdadeiro
+//se um ou ambos os lados retornarem verdadeiro
+echo true || true || true; // 1
+
+echo '<br>';
+
+//Um lado ou outro podem retornar verdadeiro
+//mas não ambos.
+echo true XOR false;
+
+//E lógico: AND ou &&
+echo '<br>';
+
+//Todos os testes devem ser verdadeiros
+//Para que o E lógico retorne verdadeiro
+echo true AND true && true;
+
+//Negação
+echo '<br>';
+
+// negando um verdadeiro temos false
+// negando um falso, temos verdadeiro,
+// negação com negação retorna verdadeiro
+echo !true;
+```
+
 ### 41 - Combinando Operadores Lógicos e Comparação
+
+```php
+<?php
+
+$nome = '';
+$email = '';
+
+/*
+Quero validar que todos os
+campos(aqui representados por variáveis)
+sejam preenchidos...
+*/
+echo $nome == '' || $email == ''; // Verdadeiro
+
+
+//Se o usuário tem a idade esperada pelo sistema...
+
+$idade = 30;
+$idadeUsuario = 21;
+
+echo "<br>";
+
+/**
+ * Se o usuário não colocar uma idade esperada,
+ * que é 30, a comparação retorna false, quando
+ * eu nego essse resultado, com !, eu obtenho
+ * uma comprovação do resultado da comparação.
+ *
+ */
+echo !($idade == $idadeUsuario);
+
+
+
+/*
+ Verificar se o usuário tem uma idade entre
+ um espaço ou range interno do sistema.
+ Ex.: Ter entre 21 e 30 anos.
+ */
+echo '<br>';
+
+$idadeMinima = 21;
+$idadeMaxima = 30;
+
+$idadeUsuario = 31;
+
+
+echo $idadeUsuario >= $idadeMinima
+    && $idadeUsuario <= $idadeMaxima;
+```
+
 ### 42 - Operador Incremento e Decremento
+
+```php
+<?php
+
+$num = 1;
+
+//$num = $num + 1;
+echo $num++;
+echo '<br>';
+echo $num;
+
+echo '<br>';
+
+echo ++$num; //$num + 1 : 3
+echo '<br>';
+echo $num; // 3
+
+
+//$num = $num - 1;
+echo '<br>';
+
+echo $num--; //3
+echo '<br>';
+echo $num; //2
+echo '<br>';
+
+echo --$num; // 1
+echo '<br>';
+echo $num; //1
+```
+
 ### 43 - Conclusões
 
 [Voltar ao Índice](#indice)
